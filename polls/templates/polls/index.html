@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<link rel="stylesheet" href="{% static 'polls/style.css' %}" />
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Polls</title>
+  </head>
+  <body>
+    <h1>Polls</h1>
+    {% if latest_question_list %}
+      <container>
+      <table>
+        <thead>
+          <tr>
+            <th>Questions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for question in latest_question_list %}
+            <tr>
+              <td>
+                <a href="{% url 'polls:detail' question.id %}">
+                  <p>{{ question.question_text }}</p>
+                </a>
+                <div class="trail">
+                  <a href="{% url 'polls:results' question.id %}">
+                    <p>results</p>
+                  </a>
+                  <a href="{% url 'polls:vote' question.id %}" style="margin-left: 1em">
+                    <p>vote</p>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </container>
+    {% else %}
+      <p>No polls are available.</p>
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,42 @@
+li a {
+  color: green;
+}
+
+body {
+  background: white url("images/doge.png") no-repeat;
+}
+
+container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 20px;
+  justify-content: center;
+}
+
+th,
+td {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.trail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-align: center;
+}
